@@ -1,0 +1,6 @@
+.shape {
+  width: 0;
+  height: 0;
+  border-bottom: 35px solid black;
+  border-inline: 20px solid transparent;
+}
