@@ -1,6 +1,6 @@
 "use client";
 
-import { createInvoice } from "@/app/lib/actions";
+import { createInvoice, updateInvoice } from "@/app/lib/actions";
 import { CustomerField, Invoice } from "@/app/lib/definitions";
 import {
   CheckIcon,
@@ -18,10 +18,10 @@ export default async function Form({
   customers: CustomerField[];
   invoice?: Omit<Invoice, "date">;
 }) {
-  console.log("invoice", invoice);
-
   return (
-    <form action={createInvoice}>
+    <form
+      action={invoice ? updateInvoice.bind(null, invoice.id) : createInvoice}
+    >
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -120,7 +120,9 @@ export default async function Form({
         >
           Cancel
         </Link>
-        <Button type="submit">Create Invoice</Button>
+        <Button type="submit">
+          {invoice ? "Edit Invoice" : "Create Invoice"}
+        </Button>
       </div>
     </form>
   );
