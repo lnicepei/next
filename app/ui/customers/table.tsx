@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import { lusitana } from '@/app/ui/fonts';
-import Search from '../search';
-import { CustomersTable, FormattedCustomersTable } from '@/app/lib/definitions';
+import { FormattedCustomersTable } from "@/app/lib/definitions";
+import { lusitana } from "@/app/ui/fonts";
+import Image from "next/image";
+import Search from "../search";
 
 export default async function CustomersTable({
   customers,
@@ -87,6 +87,7 @@ export default async function CustomersTable({
                         <div className="flex items-center gap-3">
                           <Image
                             src={customer.image_url}
+                            unoptimized
                             className="rounded-full"
                             alt={`${customer.name}'s profile picture`}
                             width={28}
