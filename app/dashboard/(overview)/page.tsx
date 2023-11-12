@@ -7,7 +7,12 @@ import {
   LatestInvoicesSkeleton,
   RevenueChartSkeleton,
 } from "@/app/ui/skeletons";
+import { Metadata } from "next";
 import { Suspense } from "react";
+
+export const metadata = {
+  title: "Home",
+} satisfies Metadata;
 
 export default async function Page() {
   return (

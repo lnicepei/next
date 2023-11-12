@@ -1,9 +1,14 @@
 import AcmeLogo from "@/app/ui/acme-logo";
 import styles from "./ui/home.module.css";
 
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { lusitana } from "./ui/fonts";
+
+export const metadata = {
+  title: "Landing",
+} satisfies Metadata;
 
 export default function Page() {
   return (
